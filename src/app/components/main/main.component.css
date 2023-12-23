@@ -1,0 +1,166 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+  transition: color 0.3s ease;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  transition: padding 0.3s ease;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+nav a {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 50px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #16314d;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #3d9ceb;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 70px;
+}
+
+.sub-div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sub-div input[type="text"] {
+  background-color: #d5e5f6;
+  padding: 8px;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  width: 200px;
+}
+
+.sub-div button {
+  padding: 7px 18px;
+  border: none;
+  border-radius: 18px;
+  background-color: #476b91;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: transform 0.3s ease;
+}
+
+.sub-div button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.main-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.fav-btn {
+  width: 100%;
+}
+
+.fav-btn h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.fav-btn button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #476b91;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: transform 0.3s ease;
+  margin-left: 10px;
+}
+
+.fav-btn button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.weather-details {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+  color: black;
+  font-weight: 700;
+}
+
+.weather-details h2 {
+  margin-top: 0;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.forecast-cards {
+  display: flex;
+
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.forecast-card {
+  background-color: lightblue;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+.forecast-card .day {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.forecast-card .temperature {
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 10px;
+}

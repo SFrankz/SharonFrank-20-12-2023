@@ -1,0 +1,70 @@
+<header>
+  <nav>
+    <a routerLink="/">Home</a>
+    <a routerLink="/favorites">Favorites</a>
+  </nav>
+  <div class="city-list">
+    <div class="fav-btn">
+  <button (click)="toggleTheme()" >Toggle Dark/Light Theme
+  </button>
+</div>
+</div>
+</header>
+
+<div class="search-container">
+  <div class="sub-div">
+    <input type="text" placeholder="Search city" [(ngModel)]="searchQuery" />
+    <button class="btn btn-primary rounded-pill" (click)="searchCity(searchQuery)">
+      Search
+    </button>
+  </div>
+</div>
+
+<div class="main-screen">
+  <div class="city-list">
+    <div class="fav-btn">
+      <div>
+        <label>
+          <input type="radio" name="temperatureUnit" [(ngModel)]="temperatureUnit" value="C" />
+          Celsius
+        </label>
+        <label>
+          <input type="radio" name="temperatureUnit" [(ngModel)]="temperatureUnit" value="F" />
+          Fahrenheit
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="city-list">
+    <div class="fav-btn">
+      <div *ngIf="weatherData">
+        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+          <h2>{{ weatherData.location.name }}</h2>
+
+          <button class="btn btn-primary rounded-pill" (click)="toggleFavorite()">
+            {{ 'Add to Favorites' }}
+          </button>
+
+        </div>
+
+        <div *ngIf="weatherData.currentWeather">
+          <b>
+            Current Temperature: {{ getTemperature(weatherData.currentWeather.Value) }}
+            °{{ temperatureUnit }}
+          </b>
+          <b>{{ weatherData.currentWeather.WeatherText }}</b>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="forecast-cards" *ngIf="weatherData && weatherData.forecast">
+    <div class="forecast-card" *ngFor="let day of weatherData.forecast">
+      <div class="day">{{ getDayName(day.Date) }}</div>
+      <div class="temperature">
+        {{ getTemperature(day.Temperature.Maximum.Value) }}°{{ temperatureUnit }}
+      </div>
+    </div>
+  </div>
+</div>

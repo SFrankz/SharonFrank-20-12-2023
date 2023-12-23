@@ -1,0 +1,11 @@
+{
+  "/api": {
+    "target": "http://dataservice.accuweather.com",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}

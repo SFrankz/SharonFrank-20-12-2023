@@ -1,0 +1,27 @@
+
+<header>
+  <nav>
+    <a routerLink="/">Home</a>
+    <a routerLink="/favorites">Favorites</a>
+  </nav>
+</header>
+
+<h2>Favorite Cities</h2>
+
+<div class="forecast-cards">
+  <div *ngFor="let favorite of favorites" class="forecast-card">
+    <div class="fav-btn">
+      <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        <a (click)="navigateToDetails(favorite.id)">{{ favorite.name }}</a>
+      </div>
+      <div *ngIf="favorite.currentWeather" class="weather-details">
+        <h2>
+          Current Temperature: {{ getTemperature(favorite.currentWeather.Value) }}°{{ temperatureUnit }}
+        </h2>
+      </div>
+      <button style="background-color:red ;"(click)="removeFromFavorites(favorite.id)">
+        Remove from Favorites
+      </button>
+    </div>
+  </div>
+</div>
