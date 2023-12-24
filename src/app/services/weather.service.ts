@@ -14,7 +14,7 @@ import { environment } from 'src/environments/environment';
 })
 export class WeatherService {
   private apiKey = environment.apiKey;
-  private baseUrl = 'http://dataservice.accuweather.com';
+  private baseUrl = 'https://dataservice.accuweather.com';
   private favorites: any[] = [];
   private cacheKeyPrefix = 'weather-api-cache-';
 
